@@ -24,10 +24,10 @@ android {
         applicationId = "com.example.lich"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdkVersion 23
+        minSdk = 23
         targetSdk = flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName = flutter.versionName
+        versionCode = 1
+        versionName = "1.0.0"
     }
 
     buildTypes {
