@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.lich"
-    compileSdk = flutter.compileSdkVersion
+    compileSdkVersion = 34
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -25,8 +25,8 @@ android {
         applicationId = "com.example.lich"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 23
-        targetSdk = flutter.targetSdkVersion
+        minSdkVersion = 21
+        targetSdkVersion = 34
         versionCode = 1
         versionName = "1.0.0"
     }
