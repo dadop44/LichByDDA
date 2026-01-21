@@ -1,0 +1,28 @@
+workflows:
+  android-workflow:
+    name: Android Release
+    max_build_duration: 120
+    instance_type: mac_mini_m1 # Sử dụng máy Mac để build nhanh hơn (hoặc linux)
+    environment:
+      flutter: stable
+      xcode: latest # Cần thiết nếu sau này bạn build iOS
+      cocoapods: default
+    scripts:
+      - name: Get dependencies
+        script: |
+          flutter pub get
+      - name: Set up local.properties
+        script: |
+          echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Build Android APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publishing:
+      email:
+        recipients:
+          - email_cua_ban@gmail.com # Thay bằng email của bạn để nhận thông báo khi build xong
+        notify:
+          success: true
+          failure: true
