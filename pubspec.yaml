@@ -23,9 +23,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1 # Thêm dòng này
 
-flutter:
-  uses-material-design: true
+# Thêm cấu hình này ở cuối file (cùng cấp với flutter:)
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon.png" # Đường dẫn tới file ảnh bạn vừa upload
+  min_sdk_android: 21 # Quan trọng để hỗ trợ các máy đời mới
   
   # Cấu hình icon launcher (nếu có file ảnh)
   # assets:
